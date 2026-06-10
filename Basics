@@ -1,0 +1,36 @@
+1.  What is a network and what types exist?
+    A network is just a group of devices connected to share data and resources. 
+    Types you should know: LAN (Local Area Network — your home/office), WAN (Wide Area Network — the internet), 
+    MAN (Metropolitan — city level). The internet is basically a giant WAN connecting all smaller networks.
+
+2.  What is internetworking?
+    Connecting different individual networks together (using routers/gateways) so they act as one big network. 
+    Think of it like roads connecting different cities — each city is its own network, the highway system is the internetwork.
+
+3.  What is an IP address? Public vs Private?
+    IP address = a unique address for every device on a network (like a postal address).
+
+    Private IPs are used inside your local network only: 10.x.x.x, 172.16.x.x–172.31.x.x, and 192.168.x.x.
+    Public IPs are the ones visible on the internet — assigned by your ISP. Your router has a public IP,
+    but all devices at home share it through NAT.
+
+4.  What is DNS?
+    Domain Name System = the internet's phone book. It translates human-friendly names like google.com
+    into IP addresses like 142.250.80.46. Uses port 53, and both TCP and UDP protocols.
+    Without DNS, you'd have to memorize IP addresses for every website.
+
+5.  What is a server farm?
+    A large collection of servers housed together in one facility to pool computing power.
+    Used to run applications at scale — like how Netflix or Google needs thousands of servers.
+    Also called a server cluster or data center.
+
+6.  What is bandwidth? Why does it matter?
+    Bandwidth = how much data can be transferred per second. Measured in bits/sec (bps) for digital, Hertz (Hz) for analog. 
+    Higher bandwidth = more data flows at once. But speed also depends on latency (how long a single packet takes to travel).
+    High bandwidth + low latency = fast network.
+
+7.  What is a VPN?
+    Virtual Private Network — creates an encrypted "tunnel" over the public internet so you can securely connect to a 
+    private network remotely. It's how employees securely access company systems from home. Works by wrapping your data
+    in encryption before it travels over the internet.
+
