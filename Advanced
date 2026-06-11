@@ -1,0 +1,30 @@
+1.  What is a transparent bridge?
+    A network device that connects two network segments and automatically learns MAC addresses — no manual configuration needed.
+    It builds a routing table by watching which device sends traffic on which port. Works through 3 mechanisms: frame forwarding, 
+    address learning, and loop resolution. "Transparent" because devices don't know it's there.
+
+2.  What is piggybacking?
+    Instead of sending a separate acknowledgment (ACK) packet, a device attaches the ACK to the next data packet 
+    it was already going to send in the reverse direction. Saves bandwidth. Downside: if there's nothing to send back for a while, 
+    the ACK is delayed, which can trigger unnecessary retransmissions.
+
+3.  What is multicast vs broadcast vs unicast?
+    Unicast: one sender → one specific receiver (most common, e.g. loading a webpage)
+    Broadcast: one sender → all devices on the network (e.g. ARP requests)
+    Multicast: one sender → a specific group of receivers (e.g. video streaming, online gaming). 
+    Efficient because data is only sent once but delivered to many.
+
+4.  What is jitter?
+    The variation in delay between packets arriving. If packets are sent at regular intervals but arrive at inconsistent times,
+    that inconsistency is jitter. Measured in milliseconds. Critical for real-time apps like video calls and VoIP 
+    if packets arrive at wildly different times, the audio/video stutters or breaks up.
+
+5.  What is OFDM?
+    Orthogonal Frequency Division Multiplexing — a technique used in WiFi (802.11), 4G/5G, and DSL. 
+    It splits a data stream into many smaller sub-streams and sends them over different sub-frequencies simultaneously. 
+    Much more spectrally efficient than plain FDM because no guard bands are needed between sub-channels.
+
+6.  What is a reverse proxy?
+    A server that sits in front of your backend servers. Clients talk to the reverse proxy, which forwards requests to the right backend server. 
+    Benefits: load balancing, SSL termination, caching, security (hides real server IPs). Nginx and Apache are commonly used as reverse proxies. 
+    Different from a forward proxy (which sits in front of clients, not servers).
