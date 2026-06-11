@@ -1,0 +1,46 @@
+1.  HTTP vs HTTPS
+    HTTP (port 80) = transfers web pages, but data is plain text — anyone can read it.
+    HTTPS (port 443) = same as HTTP but wrapped in SSL/TLS encryption. The S stands for Secure.
+    Always use HTTPS for anything sensitive — logins, payments, etc.
+
+2.  TCP vs UDP — when to use which?
+    TCP (Transmission Control Protocol):
+    Reliable, ordered, error-checked delivery
+    Does a 3-way handshake before sending (SYN → SYN-ACK → ACK)
+    Used for: web browsing, file transfer, email
+
+    UDP (User Datagram Protocol):
+    Fast, no guarantee of delivery or order
+    No handshake — just fires and forgets
+    Used for: video streaming, gaming, DNS, VoIP
+
+    Rule of thumb: if you need reliability → TCP. If you need speed → UDP.
+
+3.  What is flow control in TCP?
+    Prevents the sender from sending data faster than the receiver can process it.
+    TCP uses a sliding window mechanism — the receiver tells the sender how much buffer space it has (the "window size"),
+    and the sender can only send that much before waiting for an ACK. This prevents overwhelming the receiver.
+
+4.  Common ports to memorize
+    20/21 — FTP (file transfer)
+    22 — SSH (secure remote access)
+    23 — Telnet (insecure remote access)
+    25 — SMTP (sending email)
+    53 — DNS
+    80 — HTTP
+    110 — POP3 (receiving email)
+    143 — IMAP (receiving email, more features than POP3)
+    443 — HTTPS
+    3306 — MySQL
+
+5.  What is IPSec and where does it work?
+    IPSec = a suite of protocols that secure IP communication by authenticating and encrypting each packet.
+    It works at Layer 3 (Network layer). Used in VPNs. Two modes: Transport mode (encrypts just the payload) 
+    and Tunnel mode (encrypts the entire packet — used between gateways).
+
+6.  What is OSPF? Why faster than RIP?
+    OSPF (Open Shortest Path First) is a routing protocol that uses Dijkstra's algorithm to find the shortest path.
+    It's faster than RIP because:
+    It knows the full network topology (link-state routing)
+    RIP just counts hops (max 15), OSPF considers actual link speed
+    OSPF converges (updates routes) much faster when topology changes
