@@ -1,0 +1,31 @@
+1.  What are the 7 OSI layers? (Easy mnemonic)
+    From top to bottom: Application → Presentation → Session → Transport → Network → Data Link → Physical
+    Mnemonic: "All People Seem To Need Data Processing"
+    Top 3 (5,6,7) = User/Software layers — handle user-facing stuff.
+    Bottom 3 (1,2,3) = Hardware/Network layers — handle actual data movement.
+    Layer 4 (Transport) = the middleman, ensures reliable delivery.
+
+2.  What does each layer do? (Quick summary)
+    7 - Application: What you interact with (HTTP, FTP, DNS, email)
+    6 - Presentation: Format/encrypt/compress data (SSL/TLS, JPEG)
+    5 - Session: Manages sessions/connections between apps
+    4 - Transport: Reliable delivery (TCP/UDP), ports live here
+    3 - Network: Routing between networks, IP addresses live here
+    2 - Data Link: Node-to-node delivery, MAC addresses, adds trailer
+    1 - Physical: Actual cables/wireless signals, bits travel here
+
+3.  What is encapsulation? (Headers & trailers)
+    As data travels down the layers (sender side), each layer adds a header with its own info. 
+    The Data Link layer also adds a trailer. As data travels up the layers (receiver side), each layer strips its header. 
+    This wrapping/unwrapping is called encapsulation/decapsulation.
+
+4.  Where does transmission media sit in OSI?
+    Transmission media (cables, fiber, wireless) supports Layer 1 — the Physical layer.
+    It's literally the medium through which bits (0s and 1s as electrical/optical/radio signals) travel.
+
+5.  TCP/IP model vs OSI model?
+    Application (= OSI layers 5+6+7)
+    Transport (= OSI layer 4)
+    Internet (= OSI layer 3)
+    Network Access (= OSI layers 1+2)
+    OSI is theoretical/reference model; TCP/IP is what's actually implemented.
