@@ -1,0 +1,32 @@
+1.  CIA Triad — the foundation of security
+    Confidentiality — only authorized people can access data (encryption, passwords)
+    Integrity — data hasn't been tampered with (checksums, digital signatures)
+    Availability — systems are up and accessible when needed (backups, DDoS protection)
+    Every security decision maps back to one of these three. In interviews, use this framework to structure your answers.
+
+2.  Symmetric vs Asymmetric Encryption
+    Symmetric: Same key to encrypt and decrypt. Fast but risky — you have to securely share the key first. Examples: AES, DES.
+    Asymmetric: Two keys — a public key (shareable) and private key (secret). What one key encrypts, only the other can decrypt.
+    Slower but more secure. Examples: RSA, HTTPS uses this. Used in digital signatures too.
+
+3.  Firewall vs IPS
+    Firewall: Monitors traffic and allows/blocks based on predefined rules. It's a gatekeeper — checks if traffic should be allowed in or out.
+
+    IPS (Intrusion Prevention System):Goes further actively analyzes traffic patterns for malicious behavior and can block attacks in real time.
+    IPS is smarter (detects threats); firewall is simpler (enforces rules).
+
+4.  What is IP Spoofing?
+    An attacker fakes their IP address in packet headers to appear as a trusted source or to hide their identity. 
+    Commonly used in DDoS attacks to mask where attacks originate. 
+    The weakness lies in TCP's sequence prediction the attacker doesn't even need the response, just to send packets that look legitimate.
+
+5.  What are digital signatures?
+    A way to verify that a message is genuinely from who it claims to be from and hasn't been changed. 
+    Uses asymmetric encryption: the sender encrypts a hash of the message with their private key. 
+    The receiver decrypts it with the sender's public key. If it matches, message is authentic and untampered.
+    Used in SSL certificates, code signing, emails.
+
+6.  Authentication vs Authorization
+    Authentication = proving who you are ("Are you really Alice?") — passwords, biometrics, tokens, 2FA.
+    Authorization = deciding what you're allowed to do ("Alice can read but not delete files").
+    Authentication always happens first. Think of it like: authentication = getting past the door, authorization = which rooms you can enter.
