@@ -1,0 +1,45 @@
+1.  What is NAT? (Network Address Translation)
+    NAT lets many devices on a private network share a single public IP. Your router does this — all your home devices 
+    have private IPs (192.168.x.x) but share one public IP. When you send a request, the router replaces your private IP with its public IP,
+    and remembers to route the reply back to you. Solves IPv4 address exhaustion.
+
+2.  What is subnetting and CIDR?
+    Subnetting = dividing a large network into smaller sub-networks for better organization and security.
+    CIDR (Classless Inter-Domain Routing) = the notation for this. 192.168.1.0/24 means the first 24 bits are the network part,
+    leaving 8 bits for hosts (256 addresses, 254 usable). Common in cloud (AWS VPCs, Azure VNets) so very likely to come up.
+
+3.  TCP 3-way handshake — how connections are established
+    Step 1: Client sends SYN ("I want to connect, here's my sequence number")
+    Step 2: Server replies with SYN-ACK ("Got it, here's mine, I acknowledge yours")
+    Step 3: Client sends ACK ("Got yours, connection is open")
+    After this, data flows. Connection is closed with a FIN-ACK sequence. This is fundamental — interviewers love this.
+
+4.  What happens when you type a URL in a browser?
+    This is a classic interview question. Full flow:
+    1. Browser checks its DNS cache → if miss, asks DNS resolver → gets IP
+    2. TCP 3-way handshake with server
+    3. If HTTPS, TLS handshake (exchange certificates, agree on encryption)
+    4. Browser sends HTTP GET request
+    5. Server sends back HTTP response with HTML
+    6. Browser parses HTML, fetches CSS/JS, renders page
+    Know this end to end — it covers DNS, TCP, HTTP, TLS all in one.
+
+5.  What is load balancing?
+    Distributes incoming traffic across multiple servers so no single server is overwhelmed. 
+    Common algorithms: Round Robin (rotate through servers), Least Connections (send to least busy), 
+    IP Hash (same client always goes to same server). Load balancers can be hardware or software (Nginx, HAProxy). Critical for scalability 
+
+6.  What is CDN? (Content Delivery Network)
+    A network of geographically distributed servers that cache content closer to users.
+    When you visit a website, you get content from the nearest CDN node, not the origin server in one location.
+    Reduces latency, improves speed, reduces load on origin. Cloudflare, Akamai, AWS CloudFront are popular CDNs. 
+
+7.  IPv4 vs IPv6
+    IPv4: 32-bit addresses (~4.3 billion addresses). Running out due to internet growth. Format: 192.168.1.1
+    IPv6: 128-bit addresses (~340 undecillion). Solves address exhaustion. Format: 2001:0db8:85a3::8a2e:0370:7334
+    IPv6 also has built-in IPSec, better multicast, no need for NAT. Adoption is growing but IPv4 still dominates with NAT as a workaround.
+
+8.  What is ARP? (Address Resolution Protocol)
+    Translates IP addresses → MAC addresses within a local network. When device A wants to talk to device B (same network), 
+    it broadcasts "Who has IP 192.168.1.5?" — device B replies with its MAC address. A caches this in its ARP table. 
+    Works at Layer 2/3 boundary. 
